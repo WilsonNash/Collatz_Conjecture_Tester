@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+	<!--head starts here-->
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Collatz Conjecture Tester">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Collatz Conjecture Tester</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<!--head ends here-->
+
+<!--____________________body starts here____________________-->
+<body>
+	<h3>Collatz Conjecture Tester</h3>
+	<p>Test a number: n</p>
+	<p>If n is odd, n = (3 * n) + 1</p>
+	<p>If n is even, n = n / 2</p>
+	<p>Press the 'Clear' to clear everything out before testing another number.</p>
+
+	n = <input type="text" id="numberEntered" value="Enter a number to test" class="textfield">
+
+	<button onclick = "collatzConjecture()">Test it</button>
+	<button onclick = "clearOut()">Clear</button>
+
+
+	<div id = "updateDiv">
+	</div>
+
+
+	<script>
+	//try Record holder for numbers under 100,000,000 most number of steps to read 1 63,728,127
+	function collatzConjecture() {
+		var numberToTest = document.getElementById("numberEntered").value;
+
+		if (isNaN(numberToTest) == true) {
+			document.getElementById("updateDiv").innerHTML = "This is not a number";
+		} else {
+				var num = Number(numberToTest);
+				var steps = 0;
+
+				while (num > 1) {
+					console.log(num)
+
+				if (num == 1) {
+				} else if (num % 2 == 1) {
+					var newParagraph = document.createElement('h3');
+					var equationExample = document.createElement('p');
+					steps++;
+					equationExample.textContent = "Step " + steps + "_____odd_____" + "(3 * " + num + ") + 1 =";
+					document.getElementById("updateDiv").appendChild(equationExample);
+
+					num = ((3 * num) + 1);
+					newParagraph.textContent = num;
+					document.getElementById("updateDiv").appendChild(newParagraph);
+
+				} else {
+					var newParagraph = document.createElement('h3');
+					var equationExample = document.createElement('p');
+					steps++;
+					equationExample.textContent = "Step " + steps + "_____even_____" + num + " / 2 =";
+					document.getElementById("updateDiv").appendChild(equationExample);
+
+					num = (num / 2);
+					newParagraph.textContent = num;
+					document.getElementById("updateDiv").appendChild(newParagraph);
+
+				}
+			}
+
+		}
+
+	}
+
+	function clearOut() {
+				document.getElementById("updateDiv").innerHTML = " ";
+				document.getElementById("numberEntered").value = "Enter a number to test"
+	}
+	</script>
+
+	</body>
+	<!--body ends here-->
+
+</html>
