@@ -5,7 +5,7 @@ The Collatz Conjecture has been called one of the most difficult problems in mat
 
 Basically, the conjecture is that if you take any positive, whole number, and divide it by 2 if it's even, or multiply it by 3 and add 1 if it's odd, and then you do the same thing over and over again with the resulting number, you will always eventually get to 1. 
 
-With a computer, it is of course very easy to test this, so I made a JavaScript program that allows users to input a number to see how many steps it takes to get back to 1. 
+With a computer, it is of course very easy to test this, so I made a JavaScript program that allows users to input a number to see how many steps it takes to get back to 1. My solution isn't as pretty as some of the others I looked at when I finished, but it works. 
 
 This is the example code for a blog post I made over at my site, [wilsonnashdesign.com]
 (http://wilsonnashdesign.com)
